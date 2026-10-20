@@ -1,6 +1,7 @@
 x) Spektrini. 
 
-<img width="1722" height="486" alt="image" src="https://github.com/user-attachments/assets/1deb4646-7c85-4a04-933d-5e186c1c9b98" />
+<img width="1778" height="1086" alt="image" src="https://github.com/user-attachments/assets/e7d7a5a3-4842-4b8f-aa6b-8b78b06025ac" />
+
 
 
 
