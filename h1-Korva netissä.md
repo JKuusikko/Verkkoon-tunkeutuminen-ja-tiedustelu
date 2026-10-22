@@ -16,6 +16,27 @@ Aloitin tehtävän menemällä WebSDR sivulle ja valitsin ensimmäisen vastaanot
 
 Päädyin Kiinan yhteen yleisradioon (taajuus 9600 kHz), jossa kuului hieman heikosti puhetta ja jotain musiikkia. Vesiputous näytti kanavan kohdalta kirkkaammalta eli se näyttää, että jotain tietoa/dataa tulee siltä taajuudelta. Kun mietin lopuksi vielä aallonpituutta niin se sai laskettua kaavalla λ = 300 / f(MHz) = 300 / 9,6 ≈ 31,3 m. Tämä vastasi kaistan nimeä `31 m broadcast`.
 
+## b) Moduwhat?
+
+Pysyin samassa Twenten vastaanottimessa, viritin taajuudelle 14208 kHz ja valitsin modulaatioksi USB. Sieltä kuului vähän väliä puhetta, varmaan itä-eurooppalaista? en ole varma. Aaltopituus tässä on λ = 300 / f(MHz) = 300 / 14.208 ≈ 21,1 m. Kokeilin vaihtaa AM-napille: puhe vääristyi ja USB:llä taas selkeytyi.
+
+<img width="1794" height="1338" alt="image" src="https://github.com/user-attachments/assets/0cd26004-8149-4cf4-af4c-695702ae796f" />
+
+## c) ADS-B
+
+Aloitin tehtävän menemällä ADS-B sivulle ja avasin siellä maailman kartan. Menin siellä Helsinki-Vantaan lentokentälle ja valitsin sieltä yhden koneen:
+
+<img width="2590" height="1990" alt="image" src="https://github.com/user-attachments/assets/32ef2190-a52c-4fd5-84b3-92fcac2eea37" />
+
+Kone on Air Chinan CCA912, joka on Airbus A350-900. Sen korkeus kuvanottohetkellä oli 37 000 ft ja sen nopeus 461 kt. Koneen suuntana on itä/kaakon suunta ja nykyinen sijainti oli Suomenlahdella eli on kai vain ohilennolla kohti itää.
+
+Googlettaessa selvisi, että koneessa on ADS-B-transponderi, joka lähettää automaattisesti radiolla koneen tunnisteen, sijainnin, korkeuden ja nopeuden taajuudella 1090 MHz.
+
+## d) Vapaaehtoinen Atalaya
+
+
+
+
 
 
  ## Lähteet
@@ -23,6 +44,8 @@ Päädyin Kiinan yhteen yleisradioon (taajuus 9600 kHz), jossa kuului hieman hei
 Karvinen, T. 2026. Verkkoon tunkeutuminen ja tiedustelu. Luettavissa: https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/. Luettu: 22.10.2026.
 
 Karvinen, T. 2026. Verkkoon tunkeutuminen ja tiedustelu. Luento. Haaga-Helia ammattikorkeakoulu. Luento 20.10.2026.
+
+SKYbrary. Automatic Dependent Surveillance - Broadcast (ADS-B). Luettavissa: https://skybrary.aero/articles/automatic-dependent-surveillance-broadcast-ads-b. Luettu: 22.10.2026
 
 University of Twente. WebSDR. Luettavissa: http://websdr.ewi.utwente.nl. Luettu: 22.10.2026.
 
