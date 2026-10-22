@@ -26,9 +26,4 @@ Karvinen, T. 2026. Verkkoon tunkeutuminen ja tiedustelu. Luento. Haaga-Helia amm
 
 University of Twente. WebSDR. Luettavissa: http://websdr.ewi.utwente.nl. Luettu: 22.10.2026.
 
-
-
-
-## Lähteet:
-
 https://excalidraw.com/
