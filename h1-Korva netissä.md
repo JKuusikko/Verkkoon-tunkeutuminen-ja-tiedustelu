@@ -95,5 +95,5 @@ Karvinen, T. 2026. Verkkoon tunkeutuminen ja tiedustelu. Luento. Haaga-Helia amm
 
 SKYbrary. Automatic Dependent Surveillance - Broadcast (ADS-B). Luettavissa: https://skybrary.aero/articles/automatic-dependent-surveillance-broadcast-ads-b. Luettu: 22.10.2026
 
-University of Twente. WebSDR. Luettavissa: http://websdr.ewi.utwente.nl. Luettu: 22.10.2026.
+University of Twente. WebSDR. Luettavissa: http://websdr.ewi.utwente.nl:8901 Luettu: 22.10.2026.
 
