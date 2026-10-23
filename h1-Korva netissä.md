@@ -46,6 +46,22 @@ Huomasin, että olin kiinni Telian 4G LTE -verkossa, kaistalla B3 (1800 MHz). Tu
 
 Mielenkiintoista miten pelkällä ilmaisella sovelluksella ja SIM-kortilla näkee tarkasti mihin mastoon on kiinni, millä taajuudella ja montako sektoria ympärillä on.
 
+## e) Vapaaehtoinen WifiAnalyzer
+
+## f) Vapaaehtoinen GPSTest
+
+Asensin F-Droidin kautta GPSTest-sovelluksen, annoin sijaintiluvan ja menin pihalle, jotta satelliittisignaali kuuluu paremmin. Sain paikannuksen (fix) noin 2 sekunnissa, ja vaakatarkkuudeksi tuli noin 14 metriä.
+
+<img width="1080" height="1003" alt="image" src="https://github.com/user-attachments/assets/d92b2bf1-bec2-480b-a6e5-a9a2910f1e21" />
+
+<img width="743" height="1568" alt="image" src="https://github.com/user-attachments/assets/001c7574-5d1f-4566-9a76-3aa19e61ad9d" />
+
+Näkyvissä oli 15 satelliittia kahdesta eri GNSS-järjestelmästä: USA:n ja Venäjän. Taulukossa näkyi jokaiselle satelliitille korkeuskulma (Kork.), suunta (Atsim) ja ratatietoliput (A = almanakka, E = efemeridi). SBAS-tukisatelliitteja ei ollut saatavilla sijainnissani.
+
+
+
+
+
 
 
 
@@ -53,6 +69,8 @@ Mielenkiintoista miten pelkällä ilmaisella sovelluksella ja SIM-kortilla näke
  ## Lähteet
 
 F-Droid. Atalaya. Luettavissa: https://f-droid.org/packages/cat.naval.atalaya/. Luettu: 23.10.2026.
+
+F-Droid. GPSTest. Luettavissa: https://f-droid.org/packages/com.android.gpstest/. Luettu: 23.10.2026.
 
 Karvinen, T. 2026. Verkkoon tunkeutuminen ja tiedustelu. Luettavissa: https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/. Luettu: 22.10.2026.
 
