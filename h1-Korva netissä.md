@@ -2,14 +2,12 @@
 
 Päälaitteenani oli MacBook Pro (M2), jossa macOS Tahoe 26.7.1. Kakkoskoneenani on MacBook Pro intel versio, jossa sama MacOS Tahoe 26.7.1. Normaalisti minulla on iPhone, mutta löysin kaapinpohjalta vanhan Android-puhelimen - Honor 10, jossa Android 10. Honorini oli aika vanha, mutta jollain ihmeellä kaikki toimi niin kun piti :).
 
-
 ## x) Spektrini. 
 
 <img width="1778" height="1086" alt="image" src="https://github.com/user-attachments/assets/e7d7a5a3-4842-4b8f-aa6b-8b78b06025ac" />
 
  - taajuus kasvaa oikealle, aallonpituus pienenee samaan suuntaan (c = f·λ)
  - siksi korkealla taajuudella antenni on pieni ja dataa mahtuu enemmän, matalalla taajuudella signaali taas läpäisee seiniä ja kantaa kauemmas
-
 
 ## a) WebSDR
 
@@ -53,6 +51,22 @@ Mielenkiintoista miten pelkällä ilmaisella sovelluksella ja SIM-kortilla näke
 
 ## e) Vapaaehtoinen WifiAnalyzer
 
+Avasin WifiAnalyzerin ja tarkastelin ympäröiviä WiFi-verkkoja kolmella taajuusalueella (2,4 GHz, 5 GHz ja 6 GHz) sekä eri näkymissä (Access Points, Channel Graph, Channel Rating).
+
+<img width="743" height="1568" alt="image" src="https://github.com/user-attachments/assets/b86b9f57-422c-414f-9cb8-5994414df6ed" />
+
+Oma verkkoni oli kiinni 5 GHz:llä kanavalla 100 (5500 MHz), vahvalla signaalilla ja suojauksena WPA2/WPA3. Sama verkko näkyi myös 2,4 GHz:llä kanavalla 6.
+
+<img width="743" height="1568" alt="image" src="https://github.com/user-attachments/assets/06f61ad0-08e6-4cc9-8643-8a650dadd848" />
+
+2,4 GHz -alueella verkot kasautuivat kanaville 6, 10 ja 13 ja menivät osittain päällekkäin.
+
+<img width="743" height="1568" alt="image" src="https://github.com/user-attachments/assets/d7931d7d-dfbc-480e-a834-de171c860d02" />
+
+5 GHz -alueella oli selvästi enemmän tilaa ja lähes kaikki kanavat olivat vapaita. 6 GHz -alueella näkyi rasti, eli todennäköisesti vanha Honor 10 -puhelimeni ei tue sitä.
+
+Oli tosi jännä, että sovelluksella näkee kaikki ympäröivät verkot, niiden kanavat, signaalivahvuudet, suojaustyypit ja jopa piilotetut verkot.
+
 ## f) Vapaaehtoinen GPSTest
 
 Asensin F-Droidin kautta GPSTest-sovelluksen, annoin sijaintiluvan ja menin pihalle, jotta satelliittisignaali kuuluu paremmin. Sain paikannuksen (fix) noin 2 sekunnissa, ja vaakatarkkuudeksi tuli noin 14 metriä.
@@ -63,15 +77,11 @@ Asensin F-Droidin kautta GPSTest-sovelluksen, annoin sijaintiluvan ja menin piha
 
 Näkyvissä oli 15 satelliittia kahdesta eri GNSS-järjestelmästä: USA:n ja Venäjän. Taulukossa näkyi jokaiselle satelliitille korkeuskulma (Kork.), suunta (Atsim) ja ratatietoliput (A = almanakka, E = efemeridi). SBAS-tukisatelliitteja ei ollut saatavilla sijainnissani.
 
-
-
-
-
-
-
-
-
  ## Lähteet
+
+ADS-B Exchange. Luettavissa: https://globe.adsbexchange.com/. Luettu: 22.10.2026.
+
+Excalidraw. Luettavissa: https://excalidraw.com/. Luettu: 23.10.2026.
 
 F-Droid. Atalaya. Luettavissa: https://f-droid.org/packages/cat.naval.atalaya/. Luettu: 23.10.2026.
 
@@ -85,4 +95,3 @@ SKYbrary. Automatic Dependent Surveillance - Broadcast (ADS-B). Luettavissa: htt
 
 University of Twente. WebSDR. Luettavissa: http://websdr.ewi.utwente.nl. Luettu: 22.10.2026.
 
-https://excalidraw.com/
