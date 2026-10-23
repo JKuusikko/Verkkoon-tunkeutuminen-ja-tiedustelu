@@ -1,3 +1,8 @@
+## Ympäristö
+
+Päälaitteenani oli MacBook Pro (M2), jossa macOS Tahoe 26.7.1. Kakkoskoneenani on MacBook Pro intel versio, jossa sama MacOS Tahoe 26.7.1. Normaalisti minulla on iPhone, mutta löysin kaapinpohjalta vanhan Android-puhelimen - Honor 10, jossa Android 10. Honorini oli aika vanha, mutta jollain ihmeellä kaikki toimi niin kun piti :).
+
+
 ## x) Spektrini. 
 
 <img width="1778" height="1086" alt="image" src="https://github.com/user-attachments/assets/e7d7a5a3-4842-4b8f-aa6b-8b78b06025ac" />
