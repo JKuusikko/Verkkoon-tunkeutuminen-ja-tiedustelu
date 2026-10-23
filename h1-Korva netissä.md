@@ -87,6 +87,8 @@ F-Droid. Atalaya. Luettavissa: https://f-droid.org/packages/cat.naval.atalaya/. 
 
 F-Droid. GPSTest. Luettavissa: https://f-droid.org/packages/com.android.gpstest/. Luettu: 23.10.2026.
 
+F-Droid. WiFiAnalyzer. Luettavissa: https://f-droid.org/packages/com.vrem.wifianalyzer/. Luettu: 23.10.2026.
+
 Karvinen, T. 2026. Verkkoon tunkeutuminen ja tiedustelu. Luettavissa: https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/. Luettu: 22.10.2026.
 
 Karvinen, T. 2026. Verkkoon tunkeutuminen ja tiedustelu. Luento. Haaga-Helia ammattikorkeakoulu. Luento 20.10.2026.
