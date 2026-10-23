@@ -34,12 +34,25 @@ Googlettaessa selvisi, että koneessa on ADS-B-transponderi, joka lähettää au
 
 ## d) Vapaaehtoinen Atalaya
 
+Asensin F-Droidin ja sen kautta Atalaya-sovelluksen. Annoin sijaintiluvan ja laitoin SIM-kortin paikalleen, jotta tukiasematiedot näkyvät.
+
+<img width="743" height="1568" alt="image" src="https://github.com/user-attachments/assets/2f6b1502-510e-45f1-bb61-a1264f1e734d" />
+
+<img width="743" height="1568" alt="image" src="https://github.com/user-attachments/assets/fa39290c-faf7-4deb-a5d0-4f69b6314d79" />
+
+<img width="743" height="1568" alt="image" src="https://github.com/user-attachments/assets/ad4ad2ab-be0c-4836-8c36-41d144cefe57" />
+
+Huomasin, että olin kiinni Telian 4G LTE -verkossa, kaistalla B3 (1800 MHz). Tukiaseman/solun tunnisteet: CI 37652757, eNB 147081, PCI 355, TAC 4220, CID 21. Signaaliarvot: RSSI −103 dBm, RSRP −103 dBm, RSRQ −10 dB, SNR 8 dB. Cells-näkymässä näkyi useita naapurisoluja (PCI 355, 374, 366, 385), kaikki B3/1800 MHz, eri signaalitasoilla.
+
+Mielenkiintoista miten pelkällä ilmaisella sovelluksella ja SIM-kortilla näkee tarkasti mihin mastoon on kiinni, millä taajuudella ja montako sektoria ympärillä on.
 
 
 
 
 
  ## Lähteet
+
+F-Droid. Atalaya. Luettavissa: https://f-droid.org/packages/cat.naval.atalaya/. Luettu: 23.10.2026.
 
 Karvinen, T. 2026. Verkkoon tunkeutuminen ja tiedustelu. Luettavissa: https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/. Luettu: 22.10.2026.
 
