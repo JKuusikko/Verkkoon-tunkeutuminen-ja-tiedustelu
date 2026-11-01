@@ -18,7 +18,7 @@ Tehtävät tein MacBook pro 2019, jossa macOS Tahoe 26.6. Virtual Machinena toim
 
 - Verkkoliitäntä on kuin “verkkokortti”, mutta ei välttämättä fyysinen, esim. loopback (lo) on virtuaalinen, localhostia (127.0.0.1) varten.
 
-- Nykyisten (systemd-pohjaisten) jakeluiden nimeämisskeema etuliitteen mukaan:
+- Nykyisten (systemd-pohjaisten) jakeluiden nimeäminen etuliitteen mukaan:
   - en = langallinen Ethernet (esim. enp1s0)
   - wl = WiFi (esim. wlp4s0)
   - lo = loopback
