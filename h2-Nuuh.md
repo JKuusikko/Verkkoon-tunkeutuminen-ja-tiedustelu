@@ -38,7 +38,7 @@ Aloitin tehtävän komennolla `ip a`, jolla näin kaikki verkkoyhteydet ja ainut
 
 <img width="1658" height="736" alt="kuva" src="https://github.com/user-attachments/assets/ee91666b-75ea-49a6-a9d6-00e10e986959" />
 
-Sen jälkeen ajoin komennon `sudo ip link eth0 down` ja sitten `ping 8.8.8.8` ja sieltä tuli viesti "ping: connect: Network is unreachable". Sitten laitoin verkon taas päälle komennolla `sudo ip link set eth0 up`ja sitten kun tein saman pingin niin tuli liikennettä: PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data. 64 bytes from 8.8.8.8: icmp_seq=1 ttl=128 time=4.27 ms.
+Sen jälkeen ajoin komennon `sudo ip link set eth0 down` ja sitten `ping 8.8.8.8` ja sieltä tuli viesti "ping: connect: Network is unreachable". Sitten laitoin verkon taas päälle komennolla `sudo ip link set eth0 up`ja sitten kun tein saman pingin niin tuli liikennettä: PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data. 64 bytes from 8.8.8.8: icmp_seq=1 ttl=128 time=4.27 ms.
 
 <img width="1664" height="1180" alt="kuva" src="https://github.com/user-attachments/assets/bd918ee6-fbf2-4385-bbab-1ba99245c205" />
 
