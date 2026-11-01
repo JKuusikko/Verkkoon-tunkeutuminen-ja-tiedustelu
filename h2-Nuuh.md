@@ -27,7 +27,6 @@ Tehtävät tein MacBook pro 2019, jossa macOS Tahoe 26.6. Virtual Machinena toim
 
 - Omat liitännät näkee komennoilla `ip a` ja `ip route`.
 
-
 ## a) Linux
 
 Minulla on jo Kali Linux asennettu aikaisemmilta Teron kursseilta. Laitoin virtuaalikoneelle 8GB RAMia, 40GB muistia ja 2 processoria. Asennuksesta on jo aikaa, mutta muistaakseni asennuksessa ei ollut mitään ongelmia.
@@ -54,7 +53,6 @@ ja siellähän tuli liikennettä paljon ja kuvan alhaalla näkyy, että on 3797 
 
 Valitsin yhden TLS-paketin edellisestä kohdasta (3505), josta näkyvät kaikki TCP/IP-mallin neljä kerrosta.
 
-
 <img width="1796" height="842" alt="kuva" src="https://github.com/user-attachments/assets/8e00139d-d39f-4ce7-8a64-616f23457b35" />
 
 
@@ -76,18 +74,17 @@ Valitsin yhden TLS-paketin edellisestä kohdasta (3505), josta näkyvät kaikki 
 
 Ylin Frame-rivi ei ole varsinainen kerros vaan Wiresharkin metatieto kaapatusta kehyksestä. Koska liikenne oli HTTPS:ää, sovelluskerros on salattua, joten itse sisältöä ei näe.
 
+## e) Mitäs tuli surffattua?
 
+Aloitin tehtävän lataamalla Teron sivulta tiedoston ja avasin sen Wiresharkissa.
 
+<img width="1520" height="972" alt="kuva" src="https://github.com/user-attachments/assets/d1a4a743-1cbb-4291-92b1-e6f3bbbc74c3" />
 
+Kuvasta näkyy, että on kaapattu liikennettä, jossa on 283 pakettia eli mielestäni aika vähän liikennettä. Kun katsoin statistics välilehdeltä tietoja niin sieltä löytyi muun muassa 7 eri ip-osoitetta ja 2 MAC-osoitteita eli todennäköisesti kaksi laitetta. Näistä aktiivisin kone oli 192.168.122.7, jossa 281 pakettia.
 
+<img width="1506" height="918" alt="kuva" src="https://github.com/user-attachments/assets/cdb46276-83ec-46ab-acea-3ffe058787b9" />
 
-
-
-
-
-
-
-
+Protokollista silmään pisti DNS, QUIC, TCP, UDP, TLSv1.3, ARP. Koko ja kesto oli 126 kB ja 7,5 sekuntia. Ajankohta 28.3.2025 klo 17:28.
 
 
 
@@ -96,3 +93,5 @@ Ylin Frame-rivi ei ole varsinainen kerros vaan Wiresharkin metatieto kaapatusta 
 Karvinen, T. 2025. Wireshark - Getting Started. Luettavissa: https://terokarvinen.com/wireshark-getting-started/. Luettu: 1.11.2026.
 
 Karvinen, T. 2025. Network Interface Names on Linux. Luettavissa: https://terokarvinen.com/network-interface-linux/. Luettu: 1.11.2026.
+
+Karvinen, T. 2026. Verkkoon tunkeutuminen ja tiedustelu (surfing-secure.pcap). Luettavissa: https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/. Luettu: 1.11.2026.
