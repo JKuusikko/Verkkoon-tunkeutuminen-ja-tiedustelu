@@ -32,4 +32,6 @@ Tehtävät tein MacBook pro 2019, jossa macOS Tahoe 26.6. Virtual Machinena toim
 
 ## Lähteet
 
-Karvinen, T.
+Karvinen, T. 2025. Wireshark - Getting Started. Luettavissa: https://terokarvinen.com/wireshark-getting-started/. Luettu: 1.11.2026.
+
+Karvinen, T. 2025. Network Interface Names on Linux. Luettavissa: https://terokarvinen.com/network-interface-linux/. Luettu: 1.11.2026.
