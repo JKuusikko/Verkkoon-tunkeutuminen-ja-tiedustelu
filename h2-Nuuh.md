@@ -54,7 +54,8 @@ ja siellähän tuli liikennettä paljon ja kuvan alhaalla näkyy, että on 3797 
 
 Valitsin yhden TLS-paketin edellisestä kohdasta (3505), josta näkyvät kaikki TCP/IP-mallin neljä kerrosta.
 
-<img width="1680" height="1170" alt="kuva" src="https://github.com/user-attachments/assets/a5f3e4f8-6eb4-4f9b-9ed1-07029a62ee3f" />
+<img width="1796" height="842" alt="kuva" src="https://github.com/user-attachments/assets/76c166c2-60a1-413f-92b6-4c145fd2a063" />
+
 
 - Ethernet -> linkkikerros: siirtää kehyksen lähiverkossa MAC-osoitteiden avulla (Src VMware_e4:26:ee -> Dst VMware_fd:db:7b)
 
