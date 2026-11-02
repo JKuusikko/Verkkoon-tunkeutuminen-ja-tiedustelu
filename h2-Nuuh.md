@@ -118,26 +118,49 @@ Tehtävässä käytin aikaisemmissa tehtävissä käytettyä kaappausta. Otin ta
 
 <img width="1972" height="640" alt="kuva" src="https://github.com/user-attachments/assets/4d650487-2a42-4cf0-913d-332bde34a655" />
 
-- Frame: paketin koko oli 76 tavua. Tämä on Wiresharkin metatieto, ei varsinainen protokollakerros.
+### Kysely 0x99e9
 
-- Ethernet II (linkkikerros): lähde-MAC 00:0c:29:fd:db:7b = oma koneeni, kohde-MAC 00:50:56:e4:26:ee (VMware_e4:26:ee) = gateway/NAT. Type-kenttä 0x0800 kertoo, että sisällä on IPv4-paketti. Tämä kerros siirtää kehyksen lähiverkossa fyysisten osoitteiden avulla.
+- Frame: paketin koko oli 76 tavua. Tämä on Wiresharkin metatieto.
 
-- IP (internet-kerros): lähde [täytä, oma IP] → kohde [täytä, nimipalvelimen IP]. TTL [täytä]. Protocol-kenttä 17 = UDP. Tämä kerros reitittää paketin IP-osoitteiden avulla.
+- Ethernet II (linkkikerros): lähde-MAC 00:0c:29:fd:db:7b = oma koneeni, kohde-MAC 00:50:56:e4:26:ee (VMware_e4:26:ee) = gateway/NAT. Type-kenttä 0x0800 kertoo, että sisällä on IPv4-paketti.
 
+- IP (internet-kerros): lähde 192.168.2.128 -> kohde 192.168.2.2. TTL 64. Protocol-kenttä 17 = UDP. Tämä kerros reitittää paketin IP-osoitteiden avulla.
 
+- UDP (kuljetuskerros): lähdeportti 35011 -> kohdeportti 53. DNS käyttää UDP:tä, koska kysely on pieni ja nopea.
 
+- DNS (sovelluskerros): Standard query, nimi terokarvinen.com, type A (IPv4-osoitteen kysely). Koneeni kysyy: mikä on terokarvinen.com:n IP-osoite?
 
+### Vastaus 0x99e9
 
+- Ethernet: Src VMware_e4:26:ee -> Dst VMware_fd:db:7b eli päinvastoin kuin kyselyssä
+
+- IP: Src 192.168.2.2 (nimipalvelin) -> Dst 192.168.2.128 (oma kone), tämäkin on käänteinen
+
+- UDP: Port 53 -> Port 35011 eli portit vaihtoivat paikkaa: nyt palvelin vastaa portista 53 takaisin siihen yläporttiin 35011, josta kysely lähti
+
+- Domain Name System: sama id kuin kyselyssä, kysely onnistui ilman virheitä. TTL 5. Vastauksena saatiin terokarvinen.com = 94.237.112.134.
 
 
 ## Lähteet
 
-Karvinen, T. 2025. Wireshark - Getting Started. Luettavissa: https://terokarvinen.com/wireshark-getting-started/. Luettu: 1.11.2026.
+Anthropic. 2026. Claude. Käytetty apuna Wireshark analyysin tutkimisessa ja käsitteiden avaamisessa. Keskustelut käyty: 1.–2.11.2026.
+
+Giang. 2025. H1 Sniff: f) Mitä selainta käyttäjä käyttää? (spoiler/läpikävely). Luettavissa: https://github.com/gianglex/Courses/blob/6e74794c2e27752698f9bff0455a927843d9f934/Verkkoon-Tunkeutuminen-ja-Tiedustelu/h1-sniff.md#f-mit%C3%A4-selainta-k%C3%A4ytt%C3%A4j%C3%A4-k%C3%A4ytt%C3%A4%C3%A4. Luettu: 2.11.2026.
+
+Ja3.zone. JA3-sormenjälkien vertailu. Luettavissa: https://ja3.zone/. Luettu: 2.11.2026.
 
 Karvinen, T. 2025. Network Interface Names on Linux. Luettavissa: https://terokarvinen.com/network-interface-linux/. Luettu: 1.11.2026.
 
+Karvinen, T. 2025. Wireshark - Getting Started. Luettavissa: https://terokarvinen.com/wireshark-getting-started/. Luettu: 1.11.2026.
+
 Karvinen, T. 2026. Verkkoon tunkeutuminen ja tiedustelu (surfing-secure.pcap). Luettavissa: https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/. Luettu: 1.11.2026.
 
-ja3.zone
+Microsoft. 2026. Network ports used by DNS. Luettavissa: https://learn.microsoft.com/en-us/windows-server/networking/dns/network-ports. Luettu: 2.11.2026.
 
- Läpikävely selaimen selvittämiseen kohdassa f. Giang 2025: H1 Sniff: f) Mitä selainta käyttäjä käyttää? (spoiler)
+Wikipedia. 2026. Internet protocol suite. Luettavissa: https://en.wikipedia.org/wiki/Internet_protocol_suite. Luettu: 2.11.2026.
+
+Wireshark. Wireshark User's Guide (Statistics). Luettavissa: https://www.wireshark.org/docs/wsug_html_chunked/. Luettu: 2.11.2026.
+
+
+
+
