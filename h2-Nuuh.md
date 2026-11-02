@@ -6,7 +6,7 @@ Tehtävät tein MacBook pro 2019, jossa macOS Tahoe 26.6. Virtual Machinena toim
 
 ### Wireshark - Getting started
 
-- Wireshark on johtava verkkoliikenteen `nuuskija` ja `analysaattori`, asennus: `sudo apt-get install wireshark`.
+- Wireshark on johtava verkkoliikenteen `nuuskija` ja `analysaattori`. Asennus: `sudo apt-get install wireshark`.
 
 - Oma käyttäjä lisätään komennolla `sudo adduser "käyttäjän nimi" wireshark`, jotta kaappaus onnistuu ilman root-oikeuksia.
 
@@ -55,8 +55,7 @@ Valitsin yhden TLS-paketin edellisestä kohdasta (3505), josta näkyvät kaikki 
 
 <img width="1796" height="842" alt="kuva" src="https://github.com/user-attachments/assets/8e00139d-d39f-4ce7-8a64-616f23457b35" />
 
-
-- Ethernet -> linkkikerros: siirtää kehyksen lähiverkossa MAC-osoitteiden avulla (Src VMware_e4:26:ee -> Dst VMware_fd:db:7b)
+- Ethernet -> linkkikerros: siirtää kehyksen lähiverkossa MAC-osoitteiden avulla VMware_e4:26:ee -> Dst VMware_fd:db:7b
 
 <img width="1598" height="174" alt="kuva" src="https://github.com/user-attachments/assets/11a03635-ea49-409e-8482-2ce79e354ee3" />
 
@@ -104,17 +103,17 @@ Katsoin käyttäjän koneen (192.168.122.7) lähettämän paketin Ethernet II -k
 
  <img width="1496" height="366" alt="kuva" src="https://github.com/user-attachments/assets/d9265406-78fb-4185-a2c2-64fd97ab87f3" />
 
-MAC-osoitteen kolme ensimmäistä tavua kertovat yleensä verkkokortin valmistajan. Tässä kuitenkin LG-bitti on 1 (“Locally administered address”), eli osoite ei ole valmistajan antama vaan ohjelmallisesti asetettu. Tämä tarkoittaa, että käyttäjällä ei ole tunnistettavaa fyysistä verkkokorttimerkkiä vaan kyseessä on todennäköisesti virtuaalikoneen emuloima verkkokortti. Käyttäjä on siis surffannut virtuaalikoneesta käsin. Tästä en ole kuitenkaan 100% varma vaan tiedon tästä etsin netistä.
+MAC-osoitteen kolme ensimmäistä tavua kertovat yleensä verkkokortin valmistajan. Tässä kuitenkin LG-bitti on 1 eli Locally administered address, joka tarkoittaa että osoite ei ole valmistajan antama vaan ohjelmallisesti asetettu. Todennäköisesti käyttäjällä ei ole tunnistettavaa fyysistä verkkokorttimerkkiä vaan kyseessä on todennäköisesti virtuaalikoneen emuloima verkkokortti. Käyttäjä on siis surffannut virtuaalikoneesta käsin. Tästä en ole kuitenkaan 100% varma vaan tiedon tästä etsin netistä.
 
 ## h) Millä weppipalvelimella käyttäjä on surffaillut?
 
-Asetin filtteriin `dns.qry.name` ja sain suodateetua DNS-kyselyt, joista selviää että käyttäjä käynyt google.com:ssa sekä terokarvinen.com:ssa.
+Asetin filtteriin `dns.qry.name` ja sain suodatettua DNS-kyselyt, joista selviää että käyttäjä käynyt google.com:ssa sekä terokarvinen.com:ssa.
 
 <img width="1914" height="970" alt="kuva" src="https://github.com/user-attachments/assets/0f015eae-c377-41c7-bb0b-e092e2228364" />
 
 ## i) Analyysi omasta liikenteestä
 
-Tehtävässä käytin aikaisemmissa tehtävissä käytettyä kaappausta. Otin tarkasteluun kaksi pakettia: DNS-kyselyn ja siihen tulleen vastauksen (Transaction ID 0x99e9).
+Tehtävässä käytin aikaisemmissa tehtävissä käytettyä kaappausta. Otin tarkasteluun kaksi pakettia: DNS-kyselyn ja siihen tulleen vastauksen: Transaction ID 0x99e9.
 
 <img width="1972" height="640" alt="kuva" src="https://github.com/user-attachments/assets/4d650487-2a42-4cf0-913d-332bde34a655" />
 
