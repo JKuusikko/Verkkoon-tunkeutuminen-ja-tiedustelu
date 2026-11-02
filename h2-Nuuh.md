@@ -86,6 +86,48 @@ Kuvasta näkyy, että on kaapattu liikennettä, jossa on 283 pakettia eli mieles
 
 Protokollista silmään pisti DNS, QUIC, TCP, UDP, TLSv1.3, ARP. Koko ja kesto oli 126 kB ja 7,5 sekuntia. Ajankohta 28.3.2025 klo 17:28.
 
+## f) Vapaaehtoinen, vaikea: Mitä selainta käyttäjä käyttää?
+
+Koska liikenne oli pääosin salattua, selainta ei näe suoraan. Etsin TLS paketista JA3-sormenjäljen, joka tiivistää TLS-kättelyn ominaispiirteet ja toimii ohjelman “sormenjälkenä”.
+
+<img width="1450" height="428" alt="kuva" src="https://github.com/user-attachments/assets/8e77ecba-ef3b-4c8a-8a1c-c102a1ce264e" />
+
+JA3-arvo: `b5001237acdf006056b409cc433726b0`, tässä vaiheessa osaamiseni loppu, joten katsoi lopun tehtävästä Teron sivulta olevasta linkistä ja siellä kerrottiin sivu, jossa voi verrata JA3 arvoja. 
+
+<img width="2096" height="1084" alt="kuva" src="https://github.com/user-attachments/assets/677c8dea-6452-4b58-a36c-6ce83ef7b075" />
+
+Tästä johtopäätöksenä käyttäjä käyttää todennäköisesti Firefoxia. Kuitenkin ei ole 100% varmuudella, koska siellä näkyi myös muitakin selaimia, mutta pääasiassa 95-98% käytti Firefoxia.
+
+## g) Minkä merkkinen verkkokortti käyttäjällä on?
+
+Katsoin käyttäjän koneen (192.168.122.7) lähettämän paketin Ethernet II -kerroksesta Source-MAC-osoitteen: 52:54:00:2f:e1:e5.
+
+ <img width="1496" height="366" alt="kuva" src="https://github.com/user-attachments/assets/d9265406-78fb-4185-a2c2-64fd97ab87f3" />
+
+MAC-osoitteen kolme ensimmäistä tavua kertovat yleensä verkkokortin valmistajan. Tässä kuitenkin LG-bitti on 1 (“Locally administered address”), eli osoite ei ole valmistajan antama vaan ohjelmallisesti asetettu. Tämä tarkoittaa, että käyttäjällä ei ole tunnistettavaa fyysistä verkkokorttimerkkiä vaan kyseessä on todennäköisesti virtuaalikoneen emuloima verkkokortti. Käyttäjä on siis surffannut virtuaalikoneesta käsin. Tästä en ole kuitenkaan 100% varma vaan tiedon tästä etsin netistä.
+
+## h) Millä weppipalvelimella käyttäjä on surffaillut?
+
+Asetin filtteriin `dns.qry.name` ja sain suodateetua DNS-kyselyt, joista selviää että käyttäjä käynyt google.com:ssa sekä terokarvinen.com:ssa.
+
+<img width="1914" height="970" alt="kuva" src="https://github.com/user-attachments/assets/0f015eae-c377-41c7-bb0b-e092e2228364" />
+
+## i) Analyysi omasta liikenteestä
+
+Tehtävässä käytin aikaisemmissa tehtävissä käytettyä kaappausta. Otin tarkasteluun kaksi pakettia: DNS-kyselyn ja siihen tulleen vastauksen (Transaction ID 0x99e9).
+
+<img width="1972" height="640" alt="kuva" src="https://github.com/user-attachments/assets/4d650487-2a42-4cf0-913d-332bde34a655" />
+
+- Frame: paketin koko oli 76 tavua. Tämä on Wiresharkin metatieto, ei varsinainen protokollakerros.
+
+- Ethernet II (linkkikerros): lähde-MAC 00:0c:29:fd:db:7b = oma koneeni, kohde-MAC 00:50:56:e4:26:ee (VMware_e4:26:ee) = gateway/NAT. Type-kenttä 0x0800 kertoo, että sisällä on IPv4-paketti. Tämä kerros siirtää kehyksen lähiverkossa fyysisten osoitteiden avulla.
+
+- IP (internet-kerros): lähde [täytä, oma IP] → kohde [täytä, nimipalvelimen IP]. TTL [täytä]. Protocol-kenttä 17 = UDP. Tämä kerros reitittää paketin IP-osoitteiden avulla.
+
+
+
+
+
 
 
 ## Lähteet
@@ -95,3 +137,7 @@ Karvinen, T. 2025. Wireshark - Getting Started. Luettavissa: https://terokarvine
 Karvinen, T. 2025. Network Interface Names on Linux. Luettavissa: https://terokarvinen.com/network-interface-linux/. Luettu: 1.11.2026.
 
 Karvinen, T. 2026. Verkkoon tunkeutuminen ja tiedustelu (surfing-secure.pcap). Luettavissa: https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/. Luettu: 1.11.2026.
+
+ja3.zone
+
+ Läpikävely selaimen selvittämiseen kohdassa f. Giang 2025: H1 Sniff: f) Mitä selainta käyttäjä käyttää? (spoiler)
