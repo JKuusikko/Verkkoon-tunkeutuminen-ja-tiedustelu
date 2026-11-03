@@ -127,7 +127,7 @@ Tehtävässä käytin aikaisemmissa tehtävissä käytettyä kaappausta. Otin ta
 
 - UDP (kuljetuskerros): lähdeportti 35011 -> kohdeportti 53. DNS käyttää UDP:tä, koska kysely on pieni ja nopea.
 
-- DNS (sovelluskerros): Standard query, nimi terokarvinen.com, type A (IPv4-osoitteen kysely). Koneeni kysyy: mikä on terokarvinen.com:n IP-osoite?
+- DNS (sovelluskerros): Standard query, nimi terokarvinen.com, type A (IPv4-osoitteen kysely). Koneeni kysyy, että mikä on terokarvinen.com:n IP-osoite?
 
 ### Vastaus 0x99e9
 
