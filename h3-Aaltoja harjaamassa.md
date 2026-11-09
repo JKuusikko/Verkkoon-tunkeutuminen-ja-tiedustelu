@@ -99,14 +99,35 @@ Samples/Symbol = 500 näytettä -> Näytteenottotaajuus = 2 MS/s = 2 000 000 nä
 
 ## h) SDR++
 
+Asensin SDR++:n komennolla `sudo apt install sdrpp` ja käynnistin sen. Lisäsin signaalilähteeksi File Source -moduulin ja valitsin siihen aiemman Nexa-näytteeni, asetin formaatin oikein (int16, Float32 Mode pois päältä).
+
 <img width="2544" height="1660" alt="kuva" src="https://github.com/user-attachments/assets/0b57add4-c555-470e-9d47-615aedb3844b" />
 
+Signaalin saaminen toistumaan ei kuitenkaan onnistunut ja lokiin tuli virhe “Error: Sample rate may not be zero”. Googlettamalla selisi, että SDR++:n File Source ei lukenut näytteenottotaajuutta tiedostosta, joten toistonopeus jäi nollaksi. Kokeilin korjata asiaa nimeämällä tiedoston uudelleen, mutta tämä versio ei tukenut sitä. Ohjelma itsessään kuitenkin toimii ja sen käyttöliittymä on valmis.
+
+## i) GNU radio
+
+Asensin GNU Radion komennolla `sudo apt install gnuradio` ja käynnistin sen komennolla `gnuradio-companion`:
+
+<img width="1846" height="1264" alt="kuva" src="https://github.com/user-attachments/assets/0f38fea7-ca22-458c-96bf-1a414a0e4d8d" />
+
+Sen jälkeen tein yksinkertaisen flowgraphin, tallensin sen ja ajoin:
+
+<img width="1842" height="1080" alt="kuva" src="https://github.com/user-attachments/assets/0b126168-ff0b-4aec-bc20-4cc1875070f0" />
+
+Flowgraph tuottaa siniaallon (Signal Source) ja piirtää sen aikatasossa (QT GUI Time Sink). Kuvan sininen (Signal 1) ja punainen (Signal 2) käyrä ovat kompleksisignaalin I- ja Q-komponentit.
+
+<img width="1822" height="1270" alt="kuva" src="https://github.com/user-attachments/assets/0bc2a034-5155-464d-95a6-fe0b553ea846" />
 
 ## Lähteet
+
+AlexandreRouma. SDR++. GitHub. Luettavissa: https://github.com/AlexandreRouma/SDRPlusPlus. Luettu: 9.11.2026.
 
 Anthropic. 2026. Claude. Käytetty apuna rtl_433- ja URH-analyysin tulkinnassa sekä käsitteiden avaamisessa. Keskustelut käyty: 7-9.11.2026.
 
 Cornelius. 2022. Decode 433.92 MHz weather station data. Luettavissa: https://www.onetransistor.eu/2022/01/decode-433mhz-ask-signal.html. Luettu: 6.11.2026.
+
+GNU Radio Project. 2026. GNU Radio. Luettavissa: https://www.gnuradio.org/. Luettu: 9.11.2026.
 
 Hubacek. 2019. Universal Radio Hacker SDR Tutorial on 433 MHz radio plugs. YouTube. Katsottavissa: https://www.youtube.com/watch?v=sbqMqb6FVMY&t=199s. Katsottu: 9.11.2026.
 
