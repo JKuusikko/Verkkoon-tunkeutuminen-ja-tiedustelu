@@ -47,7 +47,7 @@ Tehtävän tavoite on analysoida juuri ladatulla rtl_433 ohjelmalla **Converted_
 
 <img width="1672" height="1410" alt="kuva" src="https://github.com/user-attachments/assets/50f9b3d4-f3cc-4565-a489-32e0ef48c288" />
 
-Analyysista sai seuraavia tuloksia:
+Analyysistä sai seuraavia tuloksia:
 
 - **House Code/ID**: 8785315
 - **Unit**: 3
@@ -57,17 +57,17 @@ Analyysista sai seuraavia tuloksia:
 
 Eli rtl_433 tunnisti näytteestä kytkimen/pistorasian. Sama signaali tulkittiin kolmella eri protokollalla, joita on KlikAanKlikUit-Switch, Proove-Security ja Nexa-Security. Lähetettävä komento on OFF, joten tarkoituksena näyttäisi olevan laitteen sammuttaminen ja sama viesti esiintyy neljään kertaa tallenteessa.
 
-## d) Too compex 16?
+## d) Too complex 16?
 
-Tehtävässä on tarkoituksena ladata .complex16 file ja se muunnetaan rtl_433 yhteensopivaan muoton, jonka jälkeen se pitää vielä analysoida. Tehtävän aloitin lataamalla tiedoston komennolla `wget https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/samples/Recorded-HackRF-20250411_183354-433_92MHz-2MSps-2MHz.complex16s`. Tämän jälkeen tiedosto pitää muuntaa rtl433 sovellukseen sopivaksi komennolla `cp Recorded-HackRF-20250411_183354-433_92MHz-2MSps-2MHz.complex16s tehtavaD_433.92M_2000k.cs8` ja sitten komennolla `rtl_433 -r tehtavaD_433.92M_2000k.cs8` tuli analyysi esiin:
+Tehtävässä on tarkoituksena ladata .complex16 file ja se muunnetaan rtl_433 yhteensopivaan muotoon, jonka jälkeen se pitää vielä analysoida. Tehtävän aloitin lataamalla tiedoston komennolla `wget https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/samples/Recorded-HackRF-20250411_183354-433_92MHz-2MSps-2MHz.complex16s`. Tämän jälkeen tiedosto pitää muuntaa rtl433 sovellukseen sopivaksi komennolla `cp Recorded-HackRF-20250411_183354-433_92MHz-2MSps-2MHz.complex16s tehtavaD_433.92M_2000k.cs8` ja sitten komennolla `rtl_433 -r tehtavaD_433.92M_2000k.cs8` tuli analyysi esiin:
 
 <img width="1686" height="1422" alt="kuva" src="https://github.com/user-attachments/assets/7f915049-e377-4e6b-95c0-697f562ae05a" />
 
-Analyysistä huomasin, että kyseessä on sama tiedosto kuin edelisessä kohdassa eli signaali tunnistui KlikAanKlikUit-Switch-, Proove-Security- ja Nexa-Security-yhteensopivaksi, House Code/ID on sama eli 8785315 ja komento OFF jne. Eli kyseessä tämän perusteella on sama kuin edellisessä kohdassa.
+Analyysistä huomasin, että kyseessä on sama tiedosto kuin edellisessä kohdassa eli signaali tunnistui KlikAanKlikUit-Switch-, Proove-Security- ja Nexa-Security-yhteensopivaksi, House Code/ID on sama eli 8785315 ja komento OFF jne. Eli kyseessä tämän perusteella on sama kuin edellisessä kohdassa.
 
 ## e) Ultimate
 
-Tässä kohdassa asennetaan virtuaalikoneelle **URH** joka on lyhenne **Universal Radio Hacker**. Aloitin sen asentamalla esnin pipx komennolla `sudo apt-get -y install pipx` ja sitten `pipx install urh`, joka asensi itse urh:n.
+Tässä kohdassa asennetaan virtuaalikoneelle **URH** joka on lyhenne **Universal Radio Hacker**. Aloitin sen asentamalla ensin pipx komennolla `sudo apt-get -y install pipx` ja sitten `pipx install urh`, joka asensi itse urh:n.
 
 <img width="1632" height="1210" alt="kuva" src="https://github.com/user-attachments/assets/f6dbd84e-047a-46d3-9855-cbd30605d6e2" />
 
@@ -85,7 +85,7 @@ Aloitin f kohdan lataamalla näytteen komennolla `wget https://terokarvinen.com/
 
 <img width="2550" height="1520" alt="kuva" src="https://github.com/user-attachments/assets/c6265dc2-18d7-4813-9730-090ecbef3945" />
 
-Tehtävänannossa mainitaan, että näytteessä Nexan pistorasian kaukosäätimen valon 1 ON -nappia on painettu kolmesti, joka näkyy kuvassa. Tiedoston perusteella voi päätellä, että tallennus on tehty 12.4.2025 klo 11:38:05 taajuudella 433,912 MHz ja näytteenottotaajuudella 2 MS/s. Kuten mainitsin niin näytteestä näkee kolme lähetysaaltoa, jotka näyttää samanlaisilta. Tämä vastaa tehtävänantoa. Koko näytteen pituus on 5,37 sekuntia, joka on siis viimeisen bitin aikaleima.
+Tehtävänannossa mainitaan, että näytteessä Nexan pistorasian kaukosäätimen valon 1 ON -nappia on painettu kolmesti, joka näkyy kuvassa. Tiedoston perusteella voi päätellä, että tallennus on tehty 12.4.2025 klo 11:38:05 taajuudella 433,912 MHz ja näytteenottotaajuudella 2 MS/s. Kuten mainitsin niin näytteestä näkee kolme lähetysaaltoa, jotka näyttää samanlaisilta. Tämä vastaa tehtävänantoa. Koko näytteen pituus on noin 5,37 sekuntia, joka on siis viimeisen bitin aikaleima.
 
 ## g) Bittistä
 
@@ -97,15 +97,24 @@ Yhden raakabitin kesto ajassa lasketaan jakamalla symbolin pituus näytteenottot
 
 Samples/Symbol = 500 näytettä -> Näytteenottotaajuus = 2 MS/s = 2 000 000 näytettä/s -> Bitin kesto = 500 ÷ 2 000 000 = 0,00025 s = 250 µs. Tästä en ole satavarma onko oikein, mutta tämän vastauksen minä sain. 250 µs on neljäsosa millisekunnista ja esimerkiksi silmänräpäykseen (~100 ms) mahtuisi satoja tällaisia bittejä. 
 
+## Lähteet
 
+Anthropic. 2026. Claude. Käytetty apuna rtl_433- ja URH-analyysin tulkinnassa sekä käsitteiden avaamisessa. Keskustelut käyty: 7-9.11.2026.
 
+Cornelius. 2022. Decode 433.92 MHz weather station data. Luettavissa: https://www.onetransistor.eu/2022/01/decode-433mhz-ask-signal.html. Luettu: 6.11.2026.
 
-## Lähteet 
+Hubacek. 2019. Universal Radio Hacker SDR Tutorial on 433 MHz radio plugs. YouTube. Katsottavissa: https://www.youtube.com/watch?v=sbqMqb6FVMY&t=199s. Katsottu: 9.11.2026.
 
-Hubacek. 2019. Universal Radio Hacker SDR Tutorial on 433 MHz radio plugs. YouTube. Katsottavissa: https://www.youtube.com/watch?v=sbqMqb6FVMY&t=199s. Katsottu: 6.11.2026.
+Karvinen, T. 2026. Verkkoon tunkeutuminen ja tiedustelu (tehtävänanto). Luettavissa: https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/. Luettu: 6.11.2026.
 
-Karvinen, T. 2026. Verkkoon tunkeutuminen ja tiedustelu (Converted_433.92M_2000k.cs8). Luettavissa: https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/. Luettu: 9.11.2026.
+Karvinen, T. 2026. Converted_433.92M_2000k.cs8 (näytetiedosto). Luettavissa: https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/samples/Converted_433.92M_2000k.cs8. Luettu: 8.11.2026.
 
-Cornelius. 2022. Decode 433.92 MHz weather station data. Luettavissa: https://www.onetransistor.eu/2022/01/decode-433mhz-ask-signal.html. Luettu: 7.11.2026.
+Karvinen, T. 2026. Recorded-HackRF-20250411_183354-433_92MHz-2MSps-2MHz.complex16s (näytetiedosto). Luettavissa: https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/samples/Recorded-HackRF-20250411_183354-433_92MHz-2MSps-2MHz.complex16s. Luettu: 9.11.2026.
 
-Lohner, K. 2019. Decoding ASK/OOK_PPM Signals with URH and rtl_433. Luettavissa: https://github.karllohner.com/SDR/Decoding/Example_2019-01-24/. Luettu: 7.11.2026.
+Karvinen, T. 2026. 1-on-on-on-HackRF-20250412_113805-433_912MHz-2MSps-2MHz.complex16s (näytetiedosto). Luettavissa: https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/samples/1-on-on-on-HackRF-20250412_113805-433_912MHz-2MSps-2MHz.complex16s. Luettu: 9.11.2026.
+
+Lohner, K. 2019. Decoding ASK/OOK_PPM Signals with URH and rtl_433. Luettavissa: https://github.karllohner.com/SDR/Decoding/Example_2019-01-24/. Luettu: 6.11.2026.
+
+merbanan. rtl_433. GitHub. Luettavissa: https://github.com/merbanan/rtl_433. Luettu: 7.11.2026.
+
+Pohl, J. Universal Radio Hacker (URH). GitHub. Luettavissa: https://github.com/jopohl/urh. Luettu: 9.11.2026.
