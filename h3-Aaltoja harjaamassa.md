@@ -77,10 +77,25 @@ Sitten komennolla `urh` niin aukesi:
 
 Näyttää oikealta ja tehtävä siis tehty.
 
+## f) yleiskuva
 
+Tämä kohta jaettu f ja g kohtaan ja niiden tavoitteena on tarkastella näytettä **1-on-on-on-HackRF-20250412_113805-433_912MHz-2MSps-2MHz.complex16s** . f kohdassa katsotaan yleiskuvaa ja g kohdassa demoduloidaan signaali raakabiteiksi.
 
+Aloitin f kohdan lataamalla näytteen komennolla `wget https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/samples/1-on-on-on-HackRF-20250412_113805-433_912MHz-2MSps-2MHz.complex16s`. Avasin näytteen urh:ssa:
 
+<img width="2550" height="1520" alt="kuva" src="https://github.com/user-attachments/assets/c6265dc2-18d7-4813-9730-090ecbef3945" />
 
+Tehtävänannossa mainitaan, että näytteessä Nexan pistorasian kaukosäätimen valon 1 ON -nappia on painettu kolmesti, joka näkyy kuvassa. Tiedoston perusteella voi päätellä, että tallennus on tehty 12.4.2025 klo 11:38:05 taajuudella 433,912 MHz ja näytteenottotaajuudella 2 MS/s. Kuten mainitsin niin näytteestä näkee kolme lähetysaaltoa, jotka näyttää samanlaisilta. Tämä vastaa tehtävänantoa. Koko näytteen pituus on 5,37 sekuntia, joka on siis viimeisen bitin aikaleima.
+
+## g) Bittistä
+
+Tässä kohdassa demoduloidaan signaali raakabiteiksi ja sen jälkeen pohtia mikä on oikea modulaatio ja löytää bitin pituus ajassa. Aluksi modulaatioksi ASK (Amplitude Shift Keying / OOK), jossa tieto koodataan sillä, onko kantoaalto päällä vai pois ja Bits/Symbol-arvoksi 1. Painoin “Autodetect parameters”, joka piti Samples/Symbol-arvona 500.
+
+<img width="2542" height="1412" alt="kuva" src="https://github.com/user-attachments/assets/7961a079-6055-4a1d-9c35-d27d28eb7388" />
+
+Yhden raakabitin kesto ajassa lasketaan jakamalla symbolin pituus näytteenottotaajuudella:
+
+Samples/Symbol = 500 näytettä -> Näytteenottotaajuus = 2 MS/s = 2 000 000 näytettä/s -> Bitin kesto = 500 ÷ 2 000 000 = 0,00025 s = 250 µs. Tästä en ole satavarma onko oikein, mutta tämän vastauksen minä sain. 250 µs on neljäsosa millisekunnista ja esimerkiksi silmänräpäykseen (~100 ms) mahtuisi satoja tällaisia bittejä. 
 
 
 
