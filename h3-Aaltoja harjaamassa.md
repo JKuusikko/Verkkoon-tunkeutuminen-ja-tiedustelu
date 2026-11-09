@@ -115,7 +115,7 @@ Sen jälkeen tein yksinkertaisen flowgraphin, tallensin sen ja ajoin:
 
 <img width="1842" height="1080" alt="kuva" src="https://github.com/user-attachments/assets/0b126168-ff0b-4aec-bc20-4cc1875070f0" />
 
-Flowgraph tuottaa siniaallon (Signal Source) ja piirtää sen aikatasossa (QT GUI Time Sink). Kuvan sininen (Signal 1) ja punainen (Signal 2) käyrä ovat kompleksisignaalin I- ja Q-komponentit.
+Flowgraph tuottaa siniaallon (Signal Source) ja piirtää sen aikatasossa (QT GUI Time Sink). Kuvan sininen (Signal 1) ja punainen (Signal 2) käyrä ovat kompleksisignaalin komponentit.
 
 <img width="1822" height="1270" alt="kuva" src="https://github.com/user-attachments/assets/0bc2a034-5155-464d-95a6-fe0b553ea846" />
 
