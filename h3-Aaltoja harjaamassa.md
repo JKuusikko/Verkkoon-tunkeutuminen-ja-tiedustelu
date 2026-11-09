@@ -33,6 +33,33 @@ Tehtävät tein MacBook pro 2019, jossa macOS Tahoe 26.6. Virtual Machinena toim
 
 - Symbolin kesto ajassa: näytteiden määrä jaettuna näytteenottotaajuudella. Esimerkissä 252 näytettä 250k näytettä/s ≈ 1008 µs per symboli.
 
+## b) rtl_433
+
+Aloitin tehtävän päivittämällä paketit komennoilla `sudo apt update && sudo apt upgrade -y`. Sitten asensin ohjelman komennolla `sudo apt install rtl-433` ja komennolla `rtl_433` avasin ohjelman asennuksen jälkeen.
+
+<img width="1172" height="184" alt="kuva" src="https://github.com/user-attachments/assets/7e65b0f6-0f02-4cea-a01d-332cf4260a5e" />
+
+Ja avautuu, mutta kun ei ole mitään ylimääräisiä laitteita kiinni koneessa, niin tulee no supported devices found -ilmoitus.
+
+## c) Automaattinen analyysi
+
+Tehtävän tavoite on analysoida juuri ladatulla rtl_433 ohjelmalla **Converted_433.92M_2000k.cs8.** tiedostoa. Ensiksi latasin tiedoston virtuaalikoneelle komennolla `wget https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/samples/Converted_433.92M_2000k.cs8`. Sitten komennolla `rtl_433 -r Converted_433.92M_2000k.cs8` tuli analyysi esille:
+
+<img width="1672" height="1410" alt="kuva" src="https://github.com/user-attachments/assets/50f9b3d4-f3cc-4565-a489-32e0ef48c288" />
+
+Analyysista sai seuraavia tuloksia:
+
+- **House Code/ID**: 8785315
+- **Unit**: 3
+- **Channel**: 3
+- **Unit**: 0
+- **Command**: OFF
+- **Group**: 0 ja **Group Call**: No
+
+
+
+
+
 
 
 ## Lähteet 
