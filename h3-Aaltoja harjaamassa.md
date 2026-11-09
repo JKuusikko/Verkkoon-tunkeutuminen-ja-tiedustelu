@@ -65,7 +65,7 @@ Tehtävässä on tarkoituksena ladata .complex16 file ja se muunnetaan rtl_433 y
 
 Analyysistä huomasin, että kyseessä on sama tiedosto kuin edelisessä kohdassa eli signaali tunnistui KlikAanKlikUit-Switch-, Proove-Security- ja Nexa-Security-yhteensopivaksi, House Code/ID on sama eli 8785315 ja komento OFF jne. Eli kyseessä tämän perusteella on sama kuin edellisessä kohdassa.
 
-## d) Ultimate
+## e) Ultimate
 
 <img width="1632" height="1210" alt="kuva" src="https://github.com/user-attachments/assets/f6dbd84e-047a-46d3-9855-cbd30605d6e2" />
 
