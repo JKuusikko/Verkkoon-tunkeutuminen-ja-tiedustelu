@@ -99,7 +99,7 @@ Samples/Symbol = 500 näytettä -> Näytteenottotaajuus = 2 MS/s = 2 000 000 nä
 
 ## h) SDR++
 
-Asensin SDR++:n komennolla `sudo apt install sdrpp` ja käynnistin sen. Lisäsin signaalilähteeksi File Source -moduulin ja valitsin siihen aiemman Nexa-näytteeni, asetin formaatin oikein (int16, Float32 Mode pois päältä).
+Asensin SDR++:n komennolla `sudo apt install sdrpp` ja käynnistin sen. Lisäsin signaalilähteeksi File Source -moduulin ja valitsin siihen aiemman Nexa-näytteeni ja asetin formaatin.
 
 <img width="2544" height="1660" alt="kuva" src="https://github.com/user-attachments/assets/0b57add4-c555-470e-9d47-615aedb3844b" />
 
