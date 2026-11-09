@@ -67,10 +67,15 @@ Analyysistä huomasin, että kyseessä on sama tiedosto kuin edelisessä kohdass
 
 ## e) Ultimate
 
+Tässä kohdassa asennetaan virtuaalikoneelle **URH** joka on lyhenne **Universal Radio Hacker**. Aloitin sen asentamalla esnin pipx komennolla `sudo apt-get -y install pipx` ja sitten `pipx install urh`, joka asensi itse urh:n.
+
 <img width="1632" height="1210" alt="kuva" src="https://github.com/user-attachments/assets/f6dbd84e-047a-46d3-9855-cbd30605d6e2" />
 
+Sitten komennolla `urh` niin aukesi:
 
 <img width="2552" height="1654" alt="kuva" src="https://github.com/user-attachments/assets/1153fea6-dbf3-4a3a-8d10-a40f96439123" />
+
+Näyttää oikealta ja tehtävä siis tehty.
 
 
 
