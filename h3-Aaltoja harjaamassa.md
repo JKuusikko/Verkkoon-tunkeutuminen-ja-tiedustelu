@@ -95,7 +95,12 @@ Tässä kohdassa demoduloidaan signaali raakabiteiksi ja sen jälkeen pohtia mik
 
 Yhden raakabitin kesto ajassa lasketaan jakamalla symbolin pituus näytteenottotaajuudella:
 
-Samples/Symbol = 500 näytettä -> Näytteenottotaajuus = 2 MS/s = 2 000 000 näytettä/s -> Bitin kesto = 500 ÷ 2 000 000 = 0,00025 s = 250 µs. Tästä en ole satavarma onko oikein, mutta tämän vastauksen minä sain. 250 µs on neljäsosa millisekunnista ja esimerkiksi silmänräpäykseen (~100 ms) mahtuisi satoja tällaisia bittejä. 
+Samples/Symbol = 500 näytettä -> Näytteenottotaajuus = 2 MS/s = 2 000 000 näytettä/s -> Bitin kesto = 500 ÷ 2 000 000 = 0,00025 s = 250 µs. Tästä en ole satavarma onko oikein, mutta tämän vastauksen minä sain. 250 µs on neljäsosa millisekunnista ja esimerkiksi silmänräpäykseen (~100 ms) mahtuisi satoja tällaisia bittejä.
+
+## h) SDR++
+
+<img width="2544" height="1660" alt="kuva" src="https://github.com/user-attachments/assets/0b57add4-c555-470e-9d47-615aedb3844b" />
+
 
 ## Lähteet
 
