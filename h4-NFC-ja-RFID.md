@@ -48,10 +48,10 @@ Kortilta -> lukijalle:
 
 SW1–SW2 on aina mukana ja kertoo miten komento meni. Esimerkkejä:
 
-90 00 = onnistui (OK)
-6A 82 = tiedostoa ei löydy
-63 Cx = väärä PIN, x yritystä jäljellä
-67 00 = väärä pituus
+- 90 00 = onnistui (OK)
+- 6A 82 = tiedostoa ei löydy
+- 63 Cx = väärä PIN, x yritystä jäljellä
+- 67 00 = väärä pituus
 
 ## c) Tutki ja kerro minkä mielenkiintoisen RFID hakkerointi uutiset löysit
 
@@ -62,9 +62,6 @@ Tietoturvayhtiö Quarkslabin tutkijat löysivät laitteistotason takaoven miljoo
 Hyökkäys on vakava, koska takaoven tunteva pystyy kloonaamaan kortin muutamassa minuutissa pelkällä hetkellisellä pääsyllä korttiin ilman ennakkotietoa kortin omista salausavaimista. Erityisen ironista tässä on se, että FM11RF08S-kortti suunniteltiin alun perin suojaamaan MIFARE Classicin tunnettuja heikkouksia vastaan, mutta samaan siruun lisättiin takaovi, joka romuttaa suojauksen.
 
 Kyseessä on toimitusketjuhaavoittuvuus: vika on itse sirussa, ei käyttäjän toiminnassa. Ongelma on laaja, koska monet eivät tiedä korttiensa olevan juuri näitä Fudanin siruja. Niitä löytyi muun muassa hotelleista Yhdysvalloissa, Euroopassa ja Intiassa.
-
-
-## Lähteet
 
 ## Lähteet
 
