@@ -84,13 +84,28 @@ Muokkasin tcp_hijack.py-skriptiin nämä napatut arvot ja ajoin sen. Skripti lä
 
 TCP-istunto tunnistetaan IP-osoitteiden, porttien ja erityisesti sequence- ja acknowledgment-numeroiden perusteella. Jos hyökkääjä pääsee näkemään nämä numerot, hän voi rakentaa paketin oikeilla numeroilla ja injektoida sen istuntoon. Näin hyökkääjä voi lähettää omia komentojaan tai dataa aktiiviseen yhteyteen, vaikkei hän alun perin ollut osa sitä.
 
-## c) 02-SDN-DDos_Simulation tryout-kansiossa on työkalut, jotta voit ajaa TCP SYN-Flood-hyökkäyksen turvallisesti. Kirjoita, miten ajoit hyökkäyksen ja miten kyseinen hyökkäys toimii.
+## c) 02-SDN-DDos_Simulation tryout-kansiossa on työkalut, jotta voit ajaa TCP SYN-Flood-hyökkäyksen turvallisesti. Kirjoita, miten ajoit hyökkäyksen ja miten kyseinen hyökkäys toimii
 
+TCP SYN-Flood on palvelunestohyökkäys (DoS), jossa hyökkääjä lähettää suuren määrän TCP-yhteyden aloituspaketteja (SYN) viimeistelemättä kättelyä. Palvelin varaa resursseja jokaiselle keskeneräiselle yhteydelle ja jää odottamaan ACK-vastausta, joka ei tule. Lopulta palvelimen yhteystaulu täyttyy, eikä se pysty palvelemaan oikeita käyttäjiä.
+
+Ajoin hyökkäyksen kansiossa 02-SDN_DDoS_Simulation-tryout. Varmistin ensin, että työkalu hping3 on asennettu `which hping3` -> /usr/sbin/hping3) eli asennettu. Käynnistin Ryu-ohjaimen komennolla `ryu-manager simple_switch_13.py &` ja ajoin sitten simulaation komennolla `sudo python3 tree_topology.py`.
+
+<img width="1442" height="408" alt="kuva" src="https://github.com/user-attachments/assets/31deb23e-c9e5-4d51-ba28-cd00126c7f29" />
+
+### Miten SYN-Flood toimii
+
+TCP-yhteys alkaa kolmivaiheisella kättelyllä **SYN -> SYN-ACK -> ACK**. SYN-Flood-hyökkäyksessä hyökkääjä lähettää paljon SYN-paketteja muttei vastaa SYN-ACK:iin. Palvelin varaa resursseja keskeneräisille yhteyksille ja lopulta yhteystaulu täyttyy, josta seuraa palvelunesto. Väärennetty lähde-IP (spoofing) tekee hyökkääjän jäljittämisestä vaikeaa ja estää palvelinta sulkemasta yhteyksiä järkevästi.
+
+## d) Vapaaehtoinen tutustu myös seuraaviin työkaluihin: EviNginx, PTunnel-ng. Kerro kyseisistä työkaluista, mitä ne tekevät, saitko asennettua ne, lisää ohjeraporttiin ja olivatko kyseiset työkalut mielenkiintoisia, jos olivat, niin miksi?
+
+Teen vielä myöhemmin, jos aikaa.
 
 
 ## Lähteet
 
+Ajith, S. ym. SDN_DDoS_Simulation. GitHub. Luettavissa: https://github.com/santhisenan/SDN_DDoS_Simulation. Luettu: 23.11.2026.
 
+Anthropic. 2026. Claude. Käytetty apuna hyökkäysten selventämisessä sekä ongelmien selvittämisessä. Keskustelut: 23.11.2026.
 
 Iso-Anttila, L. 2026. Mininet - luentomateriaali ja ohjeet (03-mininet.pdf). Haaga-Helia ammattikorkeakoulu. Luettavissa: https://hhmoodle.haaga-helia.fi/pluginfile.php/5055842/mod_resource/content/1/03-mininet.pdf. Luettu: 23.11.2026.
 
