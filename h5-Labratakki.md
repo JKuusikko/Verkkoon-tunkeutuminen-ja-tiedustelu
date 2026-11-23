@@ -74,11 +74,19 @@ ICMP (esimerkiksi ping) ei sisällä minkäänlaista todennusta eli kuka tahansa
 
 TCP Session Hijacking -labrassa hyökkääjä kaappaa aktiivisen TCP-istunnon injektoimalla siihen väärennetyn paketin. Aloitin labran ajamalla ensin ARP-myrkytyksen `arp_poison.py`, joka ohjasi liikenteen h3:n kautta. Sen jälkeen käynnistin `sniff_tcp_session.py`:n h3:lla. Sitten käynnistin palvelimen h1:llä `tcp_server.py` ja asiakkaan h2:lla `tcp_client.py`. Nyt h3:n sniffer näytti istunnon kaikki paketit SEQ- ja ACK-numeroineen. Poimin näistä viimeisimmän paketin numerot (SEQ 2171931357, ACK 2800773717) ja lähdeportin (56208).
 
-<img width="2862" height="656" alt="kuva" src="https://github.com/user-attachments/assets/ca0b6018-fbf1-4ddd-ba2a-16bfe9f89023" 
+<img width="2862" height="656" alt="kuva" src="https://github.com/user-attachments/assets/ca0b6018-fbf1-4ddd-ba2a-16bfe9f89023" />
 
 Muokkasin tcp_hijack.py-skriptiin nämä napatut arvot ja ajoin sen. Skripti lähetti väärennetyn TCP-paketin, joka teeskenteli olevansa h2 (10.0.0.2:56208) ja injektoi h1:lle payloadin "you are hacked!".
 
 <img width="2854" height="674" alt="kuva" src="https://github.com/user-attachments/assets/cd4304a6-525c-45dc-989d-a77df19200cf" />
+
+### Miten TCP Session Hijacking toimii
+
+TCP-istunto tunnistetaan IP-osoitteiden, porttien ja erityisesti sequence- ja acknowledgment-numeroiden perusteella. Jos hyökkääjä pääsee näkemään nämä numerot, hän voi rakentaa paketin oikeilla numeroilla ja injektoida sen istuntoon. Näin hyökkääjä voi lähettää omia komentojaan tai dataa aktiiviseen yhteyteen, vaikkei hän alun perin ollut osa sitä.
+
+## c) 02-SDN-DDos_Simulation tryout-kansiossa on työkalut, jotta voit ajaa TCP SYN-Flood-hyökkäyksen turvallisesti. Kirjoita, miten ajoit hyökkäyksen ja miten kyseinen hyökkäys toimii.
+
+
 
 ## Lähteet
 
