@@ -16,7 +16,7 @@ Sitten tarkistin SSH-palvelun tilan komennolla `sudo systemctl status ssh`:
 
 <img width="1600" height="762" alt="kuva" src="https://github.com/user-attachments/assets/360a7472-9e2f-447c-9a44-ea0d7d73bd2b" />
 
-Sitten yhdistin Macin terminalilla Mininetiin:
+Sitten yhdistin Macin terminalilla Mininetiin, ennen tätä kuitenkin latasin Macille Xquartz ohjelman:
 
 <img width="1058" height="462" alt="kuva" src="https://github.com/user-attachments/assets/d92b5cb1-3ad5-4f46-bcd9-513eb1710727" />
 
