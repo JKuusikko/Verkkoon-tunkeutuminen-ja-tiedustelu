@@ -51,6 +51,34 @@ Kuitenkin huomasin, että SSH itse varoitti host key -muutoksesta "REMOTE HOST I
 
 ARP muuntaa IP-osoitteen MAC-osoitteeksi lähiverkossa, eikä se vahvista vastauksia mitenkään. Hyökkääjä lähettää väärennettyjä ARP-vastauksia, jolloin uhrien ARP-välimuistit myrkyttyvät ja liikenne ohjautuu hyökkääjän kautta. Näin hyökkääjä pääsee kuuntelemaan ja muokkaamaan liikennettä (man-in-the-middle), kuten SSH-salasanan sieppaus tässä osoitti.
 
+## b) ICMP Spoofing ja TCP Session Hijacking. Aja molemmat labrat läpi ja kerro, miten molemmat tekniikat toimivat.
+
+### ICMP Spoofing
+
+Tehtävän aloitin samalla tavalla kuin edllesisessä kohdassa eli avasin ssh `ssh -Y mininet@192.168.2.130`, sitten tarkistin, että X11 on kunnossa istunnossa `echo $DISPLAY`, lisäsin X11 avaimen rootille `xauth list | while read line; do sudo xauth add $line; done`, siivosin vanhan Mininetin ja käynnistin uuden `sudo mn -c`,
+`cd ~/lab/01-Network-Security-Lab`, `ryu-manager ryu.app.simple_switch_13 &`, `sudo mn --topo single,3 --mac --switch ovsk --controller remote` ja viimeisenä avasin xtermit h1 h2 ja h3 `mininet> xterm h1 h2 h3`:
+
+<img width="2996" height="1094" alt="kuva" src="https://github.com/user-attachments/assets/d5aeea70-efd9-49e5-9a87-44f889f22340" />
+
+Sitten aloitin labran ja ensin h3 ikkunassa eli hyökkääjän koneella tein komennot: `cd ~/lab/01-Network-Security-Lab/scripts` ja `python3 spoof_icmp.py`, joka jäi kuuntelemaan ICMP-liikennettä. Uhrilla (h1) käynnistin monitorin taustalle komennolla python3 sniff_icmp.py & ja pingasin sitten h2:ta komennolla ping -c 4 10.0.0.2.
+
+<img width="966" height="682" alt="kuva" src="https://github.com/user-attachments/assets/6979759b-5bdb-44c3-b78a-1893e9116087" />
+
+Monitorista näkyy, että ICMP-liikenne on kaapattavissa ja luettavissa verkossa. Varsinaisen väärennetyn vastauksen erottaminen oli Mininet-ympäristössä hankalaa, koska oikea kohde (h2) ehti vastata pingiin ennen hyökkääjää.
+
+### Miten ICMP-spoofing toimii
+
+ICMP (esimerkiksi ping) ei sisällä minkäänlaista todennusta eli kuka tahansa verkossa voi lähettää ICMP-vastauksen ja vastaanottaja luottaa siihen. Hyökkääjä voi käyttää tätä hyväkseen esimerkiksi teeskennelläkseen, että jokin kone on online tai osana man-in-the-middle-hyökkäystä ohjatakseen ja väärentääkseen liikennettä.
+
+## TCP Session Hijacking
+
+TCP Session Hijacking -labrassa hyökkääjä kaappaa aktiivisen TCP-istunnon injektoimalla siihen väärennetyn paketin. Aloitin labran ajamalla ensin ARP-myrkytyksen `arp_poison.py`, joka ohjasi liikenteen h3:n kautta. Sen jälkeen käynnistin `sniff_tcp_session.py`:n h3:lla. Sitten käynnistin palvelimen h1:llä `tcp_server.py` ja asiakkaan h2:lla `tcp_client.py`. Nyt h3:n sniffer näytti istunnon kaikki paketit SEQ- ja ACK-numeroineen. Poimin näistä viimeisimmän paketin numerot (SEQ 2171931357, ACK 2800773717) ja lähdeportin (56208).
+
+<img width="2862" height="656" alt="kuva" src="https://github.com/user-attachments/assets/ca0b6018-fbf1-4ddd-ba2a-16bfe9f89023" 
+
+Muokkasin tcp_hijack.py-skriptiin nämä napatut arvot ja ajoin sen. Skripti lähetti väärennetyn TCP-paketin, joka teeskenteli olevansa h2 (10.0.0.2:56208) ja injektoi h1:lle payloadin "you are hacked!".
+
+<img width="2854" height="674" alt="kuva" src="https://github.com/user-attachments/assets/cd4304a6-525c-45dc-989d-a77df19200cf" />
 
 ## Lähteet
 
