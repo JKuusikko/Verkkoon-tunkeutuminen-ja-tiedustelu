@@ -45,7 +45,7 @@ Testi: h1 yritti muodostaa SSH-yhteyden "h2:lle" (ssh h2). Liikenne ohjautui myr
 
 <img width="1954" height="692" alt="kuva" src="https://github.com/user-attachments/assets/e209e5fa-1080-485c-8a12-986f19cb76cb" />
 
-Kuitenkin huomasin, että SSH itse varoitti host key -muutoksesta ("REMOTE HOST IDENTIFICATION HAS CHANGED"), mikä on nimenomaan merkki man-in-the-middle-hyökkäyksestä.
+Kuitenkin huomasin, että SSH itse varoitti host key -muutoksesta "REMOTE HOST IDENTIFICATION HAS CHANGED"), mikä on nimenomaan merkki man-in-the-middle-hyökkäyksestä.
 
 ### Miten hyökkäy toimii
 
